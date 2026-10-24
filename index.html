@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkJesT3fFDw8RWohKsHHRXII0N2XeEiPllDl6IRFOJgQ&s" />
+<title>Pixel Campus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="css/pixel.css">
+<script>try{var t=JSON.parse(localStorage.getItem('pc-theme'));if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script src="js/core.js" defer></script>
+<script src="js/music.js" defer></script>
+</head>
+<body>
+<div class="bg-grad" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="scan" aria-hidden="true"></div>
+
+<header class="site-head wrap">
+  <div class="head-top">
+    <a class="brand" href="index.html" data-icon="star">PIXEL CAMPUS</a>
+    <div class="themebar" id="themeBar" role="group" aria-label="Theme"></div>
+  </div>
+  <nav class="nav" aria-label="Main"><a href="index.html" data-icon="note" aria-current="page">Music</a><a href="students.html" data-icon="student">Students</a><a href="library.html" data-icon="book">Library</a><a href="about.html" data-icon="info">About</a><a href="contact.html" data-icon="mail">Contact</a></nav>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+  <h1>PIXEL CAMPUS<span class="blink">_</span></h1>
+  <p class="lead">Press play on a random chiptune, then visit the registry or the library. Every song is composed by your browser the moment you play it.</p>
+</section>
+
+<section class="cols wide-left" id="jukebox">
+  <div class="win">
+    <div class="win-bar"><span>Now playing</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+    <div class="win-body">
+      <div class="now">
+        <canvas id="cover" class="cover" width="112" height="112" role="img" aria-label="Pixel album art"></canvas>
+        <div>
+          <h2 id="songTitle">Pick a song</h2>
+          <p class="muted" id="songMeta"></p>
+        </div>
+      </div>
+      <div class="pbar" aria-hidden="true"><i id="pfill"></i></div>
+      <div class="times"><span id="tEl">0:00</span><span id="tTot">0:00</span></div>
+      <div class="row">
+        <button class="btn" id="bPrev" type="button" data-icon="prev" aria-label="Previous song"></button>
+        <button class="btn alt" id="bPlay" type="button" data-icon="play" aria-label="Play"></button>
+        <button class="btn" id="bNext" type="button" data-icon="next" aria-label="Next song"></button>
+        <button class="btn ghost" id="bRand" type="button" data-icon="dice">Random song</button>
+        <button class="btn ghost" id="bShuffle" type="button" aria-pressed="false">Shuffle</button>
+      </div>
+      <div class="vol"><label for="vol">Volume</label><input id="vol" type="range" min="0" max="100" value="70"></div>
+      <canvas id="viz" width="576" height="120" aria-hidden="true"></canvas>
+      <p class="note" id="live" aria-live="polite"></p>
+    </div>
+  </div>
+  <div class="win">
+    <div class="win-bar alt"><span>Song list</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+
+<div class="win-body">
+      <p class="note">Ten original tracks. Turn on Shuffle to let the jukebox pick the next one.</p>
+      <ol class="tracks" id="trackList" style="list-style:none"></ol>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot wrap">
+  <span>Built with HTML, CSS and JavaScript. Your data stays in this browser.</span>
+  <a href="#" onclick="window.scrollTo(0,0);return false;">Back to top</a>
+</footer>
+</body>
+</html>
+

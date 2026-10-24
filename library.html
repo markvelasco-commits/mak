@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkJesT3fFDw8RWohKsHHRXII0N2XeEiPllDl6IRFOJgQ&s" />
+<title>Library | Pixel Campus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="css/pixel.css">
+<script>try{var t=JSON.parse(localStorage.getItem('pc-theme'));if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script src="js/core.js" defer></script>
+<script src="js/books-data.js" defer></script>
+<script src="js/library.js" defer></script>
+</head>
+<body>
+<div class="bg-grad" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="scan" aria-hidden="true"></div>
+
+<header class="site-head wrap">
+  <div class="head-top">
+    <a class="brand" href="index.html" data-icon="star">PIXEL CAMPUS</a>
+    <div class="themebar" id="themeBar" role="group" aria-label="Theme"></div>
+  </div>
+  <nav class="nav" aria-label="Main"><a href="index.html" data-icon="note">Music</a><a href="students.html" data-icon="student">Students</a><a href="library.html" data-icon="book" aria-current="page">Library</a><a href="about.html" data-icon="info">About</a><a href="contact.html" data-icon="mail">Contact</a></nav>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+  <h1>PIXEL LIBRARY</h1>
+  <p class="lead">Borrow a book, read it right here, and bring it back. Seven days per loan, three books per student.</p>
+</section>
+
+<section class="win">
+  <div class="win-bar"><span>Borrower desk</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <div class="win-body">
+    <div class="borrower">
+      <div><label for="borrower">Who is borrowing?</label><select id="borrower"></select></div>
+      <div id="borrowerInfo" style="display:grid;gap:.5rem"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="n-books">0</b><span>Titles</span></div>
+      <div class="stat"><b id="n-loans">0</b><span>On loan</span></div>
+      <div class="stat"><b id="n-late">0</b><span>Overdue</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="win">
+  <div class="win-bar alt">
+    <span>Library</span>
+    <span class="tabs" role="group" aria-label="Library sections">
+      <button class="btn small ghost" type="button" data-tab="catalog" aria-pressed="true">Catalog</button>
+      <button class="btn small ghost" type="button" data-tab="loans" aria-pressed="false">My loans</button>
+      <button class="btn small ghost" type="button" data-tab="history" aria-pressed="false">History</button>
+    </span>
+  </div>
+  <div class="win-body">
+    <div id="p-catalog" style="display:grid;gap:1rem">
+      <div class="filters two">
+        <div><label for="bq">Search books</label><input id="bq" type="text" placeholder="Title, author or genre" autocomplete="off"></div>
+        <div><label for="genre">Genre</label><select id="genre"><option value="">All</option><option>Fable</option><option>Mystery</option><option>Tech</option><option>Study</option><option>Story</option><option>Sci-Fi</option></select></div>
+      </div>
+      <div class="books" id="books"></div>
+      <p class="empty" id="bempty" hidden>No books match that search.</p>
+    </div>
+
+    <div id="p-loans" style="display:grid;gap:1rem" hidden>
+      <label class="check"><input type="checkbox" id="onlyMine"> Only the selected student</label>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Book</th><th>Student</th><th>Borrowed</th><th>Due</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="loanRows"></tbody>
+        </table>
+        <p class="empty" id="lempty" hidden>No books on loan. Borrow one from the catalog.</p>
+      </div>
+      <p class="note">Read opens the book. Return puts it back on the shelf. Late books cost PHP 5 per day, and you can renew once.</p>
+    </div>
+
+    <div id="p-history" style="display:grid;gap:1rem" hidden>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Book</th><th>Student</th><th>Borrowed</th><th>Returned</th><th>Fine</th></tr></thead>
+          <tbody id="histRows"></tbody>
+        </table>
+        <p class="empty" id="hempty" hidden>Nothing returned yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot wrap">
+  <span>Built with HTML, CSS and JavaScript. Your data stays in this browser.</span>
+  <a href="#" onclick="window.scrollTo(0,0);return false;">Back to top</a>
+</footer>
+</body>
+</html>
+

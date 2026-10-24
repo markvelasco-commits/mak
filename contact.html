@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkJesT3fFDw8RWohKsHHRXII0N2XeEiPllDl6IRFOJgQ&s" />
+<title>Contact | Pixel Campus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="css/pixel.css">
+<script>try{var t=JSON.parse(localStorage.getItem('pc-theme'));if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script src="js/core.js" defer></script>
+<script src="js/contact.js" defer></script>
+</head>
+<body>
+<div class="bg-grad" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="scan" aria-hidden="true"></div>
+
+<header class="site-head wrap">
+  <div class="head-top">
+    <a class="brand" href="index.html" data-icon="star">PIXEL CAMPUS</a>
+    <div class="themebar" id="themeBar" role="group" aria-label="Theme"></div>
+  </div>
+  <nav class="nav" aria-label="Main"><a href="index.html" data-icon="note">Music</a><a href="students.html" data-icon="student">Students</a><a href="library.html" data-icon="book">Library</a><a href="about.html" data-icon="info">About</a><a href="contact.html" data-icon="mail" aria-current="page">Contact</a></nav>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+  <h1>HELP DESK</h1>
+  <p class="lead">Questions about your account, a book, or a song that will not play? Leave a note. It is checked here and saved on this device only.</p>
+</section>
+
+<section class="cols">
+  <form class="win" id="contactForm" novalidate>
+    <div class="win-bar"><span>New message</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+    <div class="win-body">
+      <div class="field" data-invalid="false"><label for="c-name">Name</label><input id="c-name" type="text" autocomplete="name" aria-describedby="ce-name"><span class="err" id="ce-name" aria-live="polite"></span></div>
+      <div class="field" data-invalid="false"><label for="c-email">Email</label><input id="c-email" type="email" autocomplete="email" aria-describedby="ce-email"><span class="err" id="ce-email" aria-live="polite"></span></div>
+      <div class="field"><label for="c-topic">Topic</label><select id="c-topic"><option>Music Hall</option><option>Student records</option><option>Library</option><option>Something else</option></select></div>
+      <div class="field" data-invalid="false"><label for="c-msg">Message</label><textarea id="c-msg" maxlength="300" aria-describedby="ce-msg"></textarea><span class="count" id="c-count">0 / 300</span><span class="err" id="ce-msg" aria-live="polite"></span></div>
+      <button class="btn" type="submit">Send message</button>
+    </div>
+  </form>
+
+  <div style="display:grid;gap:1.6rem;min-width:0">
+    <div class="win">
+      <div class="win-bar alt"><span>Good to know</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="win-body">
+        <details open><summary>Why does a song need a click?</summary><p>Browsers block sound until you press something. After your first click, the jukebox can play freely.</p></details>
+        <details><summary>Where is my data stored?</summary><p>In your own browser. Clearing site data removes students, loans and messages.</p></details>
+        <details><summary>What are the library rules?</summary><p>Enrolled students may hold three books for seven days, renew once, and pay PHP 5 for each late day.</p></details>
+        <details><summary>Can I change the colors?</summary><p>Yes. Use the theme swatches at the top, press Random, or switch on Auto to cycle every eight seconds.</p></details>
+      </div>
+    </div>
+    <div class="win">
+      <div class="win-bar"><span>Saved messages</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="win-body">
+        <ul class="msgs" id="msgLog"></ul>
+        <p class="empty" id="noMsgs">No messages yet. The last five you send appear here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot wrap">
+  <span>Built with HTML, CSS and JavaScript. Your data stays in this browser.</span>
+  <a href="#" onclick="window.scrollTo(0,0);return false;">Back to top</a>
+</footer>
+</body>
+</html>
+

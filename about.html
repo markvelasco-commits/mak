@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkJesT3fFDw8RWohKsHHRXII0N2XeEiPllDl6IRFOJgQ&s" />
+<title>About | Pixel Campus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="css/pixel.css">
+<script>try{var t=JSON.parse(localStorage.getItem('pc-theme'));if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script src="js/core.js" defer></script>
+<script src="js/about.js" defer></script>
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("thunderToggle");
+    
+        if (!button) return;
+    
+        // Create the background layer
+        let background = document.getElementById("thunder-background");
+    
+        if (!background) {
+            background = document.createElement("div");
+            background.id = "thunder-background";
+            background.setAttribute("aria-hidden", "true");
+            document.body.prepend(background);
+        }
+    
+        button.addEventListener("click", function () {
+            const enabled = document.body.classList.toggle(
+                "thunder-active"
+            );
+    
+            button.textContent = enabled
+                ? "⚡ THUNDER: ON"
+                : "⚡ THUNDER: OFF";
+    
+            button.setAttribute("aria-pressed", String(enabled));
+        });
+    });
+    </script>
+<div class="bg-grad" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="scan" aria-hidden="true"></div>
+
+<header class="site-head wrap">
+  <div class="head-top">
+    <a class="brand" href="index.html" data-icon="star">PIXEL CAMPUS</a>
+    <div class="themebar" id="themeBar" role="group" aria-label="Theme"></div>
+  </div>
+  <nav class="nav" aria-label="Main"><a href="index.html" data-icon="note">Music</a><a href="students.html" data-icon="student">Students</a><a href="library.html" data-icon="book">Library</a><a href="about.html" data-icon="info" aria-current="page">About</a><a href="contact.html" data-icon="mail">Contact</a></nav>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+  <h1>ABOUT PIXEL CAMPUS</h1>
+  <p class="lead">A small retro-style campus in your browser: music to listen to, students to manage, and books to borrow.</p>
+</section>
+
+<section class="cols">
+  <div class="win">
+    <div class="win-bar"><span>The website</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+    <div class="win-body">
+      <p>Pixel Campus is a multi-page website made to show proper use of HTML, CSS and JavaScript. It looks like an old video game, but every part of it works.</p>
+      <p>The site has four working areas. The Music Hall plays chiptune songs, the Student Registry keeps student records, the Library lends books you can read on screen, and the Help Desk takes your messages.</p>
+      <p class="muted">Pick any of six color themes at the top of every page. The gradient background moves on its own, and the pixel font is used everywhere.</p>
+    </div>
+  </div>
+  <div class="win">
+    <div class="win-bar alt"><span>The creator</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+    <div class="win-body">
+      <div class="now">
+        <canvas id="avatar" class="cover" width="112" height="112" role="img" aria-label="Pixel avatar of the creator"></canvas>
+        <div>
+          <h2>Mark S. Velasco</h2>
+          <p class="muted">Creator and developer</p>
+        </div>
+      </div>
+      <p>Mark designed and wrote every page, style and script by hand, with no frameworks. The goal was one project that uses all three web languages in a way you can click through and test.</p>
+    </div>
+  </div>
+</section>
+
+<section class="win">
+  <div class="win-bar"><span>How to use the website</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <div class="win-body">
+    <div class="cols">
+      <div>
+        <h3>1. Music</h3>
+        <p class="muted">Press the play button or Random song. Click a song in the list to play it. Click it again to pause. Turn on Shuffle to let the jukebox pick the next song.</p>
+      </div>
+      <div>
+        <h3>2. Students</h3>
+        <p class="muted">Fill in the form and press Create student. In the table, use View, Edit or Delete on any row. Type in the search box to find someone by name, ID, email or course.</p>
+      </div>
+      <div>
+        <h3>3. Library</h3>
+        <p class="muted">Choose a student at the Borrower desk, then press Borrow on a book. Open My loans to Read, Renew or Return it. Late books cost PHP 5 per day.</p>
+      </div>
+      <div>
+        <h3>4. Themes and Contact</h3>
+        <p class="muted">Click a color swatch, press Random, or switch on Auto to change themes. Use the Help Desk page to write a message. Press Esc to close any pop-up window.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="win">
+  <div class="win-bar alt"><span>Features and what they do</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <div class="win-body">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Feature</th><th>What it does</th><th>Page</th></tr></thead>
+        <tbody>
+          <tr><td>Chiptune jukebox</td><td>Composes and plays 10 songs in your browser, with volume, shuffle and a moving equalizer.</td><td>Music</td></tr>
+          <tr><td>Student records</td><td>Create, view, update, delete and search students, with checks for names and emails.</td><td>Students</td></tr>
+          <tr><td>Borrow a book</td><td>Lends a book to an enrolled student, up to 3 books for 7 days each.</td><td>Library</td></tr>
+          <tr><td>Read a book</td><td>Opens the book in a reader with page buttons, text size and a saved page.</td><td>Library</td></tr>
+          <tr><td>Return and fines</td><td>Returns a book, renews it once, and works out the late fee.</td><td>Library</td></tr>
+          <tr><td>Themes</td><td>Six color themes with Random and Auto switching, remembered next time you visit.</td><td>All pages</td></tr>
+          <tr><td>Animated background</td><td>A moving gradient with drifting pixels. It stops if your device asks for less motion.</td><td>All pages</td></tr>
+          <tr><td>Help Desk</td><td>A message form with live checks and a list of your last five messages.</td><td>Contact</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="win">
+  <div class="win-bar"><span>How the three languages are used</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <div class="win-body">
+    <div class="cols">
+      <div><h3>HTML</h3><p class="muted">Gives every page its structure: headings, forms, tables, lists and buttons with proper labels.</p></div>
+      <div><h3>CSS</h3><p class="muted">Draws the pixel windows, the six themes, the animated gradient and the layout that fits phones and desktops.</p></div>
+    </div>
+    <div><h3>JavaScript</h3><p class="muted">Plays the music, saves students and loans in your browser, checks forms, opens pop-ups and changes themes.</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot wrap">
+  <span>Built with HTML, CSS and JavaScript. Your data stays in this browser.</span>
+  <a href="#" onclick="window.scrollTo(0,0);return false;">Back to top</a>
+</footer>
+</body>
+</html>
+
